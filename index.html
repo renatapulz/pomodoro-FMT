@@ -2,34 +2,40 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/styles/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-  <title>Pomodoro - FMT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Pomodoro - FMT</title>
 </head>
 
 <body>
-  <div class="container">
-    <h1 class="titulo fontVermelho">Pomodoro</h1>
-    <img class="imgPOM" src="./assets/images/POM-HELLO.png" alt="Tomatinho Pom focado.">
-    <p class="fontVerdeEscuro"></p>
-    <div class="timer">
-      <img class="timerIcon" src="./assets/images/icons8-stopwatch-24.png" alt="Cronômetro">
-      <div class="time" id="cronometro"></div>
+    <div class="container">
+        <h1 class="titulo fontVermelho">Pomodoro</h1>
+        <img class="imgPOM" src="./assets/images/POM-HELLO.png" alt="Tomatinho Pom focado.">
+        <p class="fontVerdeEscuro"></p>
+        <div class="timer">
+            <img class="timerIcon" src="./assets/images/icons8-stopwatch-24.png" alt="Cronômetro">
+            <div class="time" id="cronometro"></div>
+        </div>
+        <div class="buttons">
+            <button class="botoes" id="start-botao">INICIAR</button>
+            <button class="botoes" id="stop-botao">PAUSAR</button>
+        </div>
+        <div class="textos-extras">
+            <div class="titulo-exercicio fontVermelho">
+                <h2 id="nome-exercicio"></h2>
+                <span>-</span>
+                <h2 id="dificuldade-exercicio"></h2>
+            </div>
+            <p class="texto-descricao fontVerdeEscuro" id="descricao-exercicio"></p>
+        </div>
     </div>
-    <div class="buttons">
-      <button class="botoes" id="start-botao">INICIAR</button>
-      <button class="botoes" id="stop-botao">PAUSAR</button>
-    </div>
-    <div id="textos-extras">
-      <p>Espaço para exibir as atividades</p>
-    </div>
-  </div>
 
-  <script src="./scripts/script.js"></script>
+    <script src="./scripts/api.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>

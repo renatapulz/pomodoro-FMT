@@ -1,10 +1,10 @@
-const container = document.querySelector('.container');
-const elementoCronometro = document.getElementById('cronometro');
-const iniciar = document.getElementById('start-botao');
-const parar = document.getElementById('stop-botao');
-const textoInicial = document.getElementsByClassName('fontVerdeEscuro')[0];
+const container = document.querySelector(".container");
+const elementoCronometro = document.getElementById("cronometro");
+const iniciar = document.getElementById("start-botao");
+const parar = document.getElementById("stop-botao");
+const textoInicial = document.getElementsByClassName("fontVerdeEscuro")[0];
 
-let tempoInicialPadrao = 0.15 * 60;
+let tempoInicialPadrao = 0.05 * 60;
 let tempoInicial = tempoInicialPadrao;
 let tempoDecorrido = 0;
 let intervaloTempo;
@@ -17,23 +17,25 @@ elementoCronometro.innerHTML = "25:00";
 function iniciarContagemRegressiva() {
   if (!execucao) {
     execucao = true;
-    if (tempoDecorrido === 0) { // Serve pra definir se o usuário está retomando ou iniciando o cronômetro, pra mostrar o tempo corretamente.
+    if (tempoDecorrido === 0) {
+      // Serve pra definir se o usuário está retomando ou iniciando o cronômetro, pra mostrar o tempo corretamente.
       iniciarCronometro(tempoInicial);
     } else {
       iniciarCronometro(tempoDecorrido);
     }
-    if (iniciar.textContent === 'RETOMAR') {
-      iniciar.textContent = 'INICIAR';
+    if (iniciar.textContent === "RETOMAR") {
+      iniciar.textContent = "INICIAR";
     }
   }
 }
 
 // Função para parar a contagem regressiva
 function pararTempo() {
-  if (tempoDecorrido != 0) { // Não remover. Se não houver esta validação ele começa do início, ao invés de finalizar.
+  if (tempoDecorrido != 0) {
+    // Não remover. Se não houver esta validação ele começa do início, ao invés de finalizar.
     clearInterval(intervaloTempo);
     execucao = false;
-    iniciar.textContent = 'RETOMAR';
+    iniciar.textContent = "RETOMAR";
   }
 }
 
@@ -44,7 +46,7 @@ function atualizarTempo() {
     clearInterval(intervaloTempo);
     execucao = false;
     if (tempoInicial === tempoInicialPadrao) {
-      tempoInicial = 0.10 * 60;
+      tempoInicial = 0.1 * 60;
     } else {
       tempoInicial = tempoInicialPadrao;
     }
@@ -54,10 +56,10 @@ function atualizarTempo() {
     let minutos = Math.floor(tempoDecorrido / 60);
     let segundos = tempoDecorrido % 60;
     if (minutos < 10) {
-      minutos = '0' + minutos;
+      minutos = "0" + minutos;
     }
     if (segundos < 10) {
-      segundos = '0' + segundos;
+      segundos = "0" + segundos;
     }
     elementoCronometro.textContent = `${minutos}:${segundos}`;
   }
@@ -65,15 +67,17 @@ function atualizarTempo() {
 
 // Função que permite alteração das imagens, textos, tempo e cor
 function alteraItensNaTela() {
-  container.classList.remove('alteracoes-pom-estuda', 'alteracoes-pom-malha');
+  container.classList.remove("alteracoes-pom-estuda", "alteracoes-pom-malha");
   if (tempoInicial === tempoInicialPadrao) {
     elementoCronometro.innerHTML = "25:00";
-    container.classList.add('alteracoes-pom-estuda');
+    container.classList.add("alteracoes-pom-estuda");
     textoInicial.innerHTML = "Agora é <b>FOCO</b> hein!";
+    ocultarExercicio();
   } else {
     elementoCronometro.innerHTML = "5:00";
-    container.classList.add('alteracoes-pom-malha');
+    container.classList.add("alteracoes-pom-malha");
     textoInicial.innerHTML = "Hora de <b>ALONGAR</b>. Vem comigo!";
+    mostraExercicio();
   }
 }
 
@@ -81,12 +85,17 @@ function alteraItensNaTela() {
 function iniciarCronometro(tempo) {
   clearInterval(intervaloTempo);
   tempoDecorrido = tempo;
-  if (intervaloTempo === undefined) {  //não remover - valida se é a primeira vez pra alterar a classe e chamar a tela do POM estudando
+  if (intervaloTempo === undefined) {
+    //não remover - valida se é a primeira vez pra alterar a classe e chamar a tela do POM estudando
     alteraItensNaTela();
   }
-  elementoCronometro.textContent = `${tempoDecorrido < 600 ? '0' : ''}${Math.floor(tempoDecorrido / 60)}:${tempoDecorrido % 60 < 10 ? '0' : ''}${tempoDecorrido % 60}`;
+  elementoCronometro.textContent = `${
+    tempoDecorrido < 600 ? "0" : ""
+  }${Math.floor(tempoDecorrido / 60)}:${tempoDecorrido % 60 < 10 ? "0" : ""}${
+    tempoDecorrido % 60
+  }`;
   intervaloTempo = setInterval(atualizarTempo, 1000);
 }
 
-iniciar.addEventListener('click', iniciarContagemRegressiva);
-parar.addEventListener('click', pararTempo);
+iniciar.addEventListener("click", iniciarContagemRegressiva);
+parar.addEventListener("click", pararTempo);
