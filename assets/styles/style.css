@@ -89,6 +89,7 @@ p {
     height: auto;
 }
 
+
 @media only screen and (max-width: 480px) {
     .container {
         justify-content: flex-start;
@@ -142,6 +143,8 @@ p {
     align-items: center;
     justify-content: center;
     align-self: center;
+    margin-bottom: 170px;
+    
 }
 
 .titulo-exercicio {
