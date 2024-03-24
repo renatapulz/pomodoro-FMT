@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <title>Pomodoro - FMT</title>
 </head>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-
 <body>
-    <div class="container">
+  <div class="container">
+    <h1 class="titulo fontVermelho">Pomodoro</h1>
+    <img class="imgPOM" src="./assets/images/POM-HELLO.png" alt="Tomatinho Pom focado.">
+    <p class="fontVerdeEscuro"></p>
+    <div class="timer">
+      <img class="timerIcon" src="./assets/images/icons8-stopwatch-24.png" alt="Cronômetro">
+      <div class="time" id="cronometro"></div>
+    </div>
+    <div class="buttons">
+      <button class="botoes" id="start-botao">INICIAR</button>
+      <button class="botoes" id="stop-botao">PAUSAR</button>
+    </div>
+    <div id="textos-extras">
+      <p>Espaço para exibir as atividades</p>
+    </div>
+  </div>
 
-        <h1 class="titulo fontVermelho">Pomodoro</h1>
-        <img class="imgPOM" src="./assets/images/POM FOCA.png" alt="Tomatinho Pom focado.">
-        <p class="fontVerdeEscuro">Oi, eu sou o <b>POM!</b> Vamos estudar?</p>
-        <div class="timer">
-          <img class="timerIcon" src="./assets/images/icons8-stopwatch-24.png" alt="Cronômetro">  
-          <div class="time" id="minutes">00</div>
-          <div class="separator">:</div>
-          <div class="time" id="seconds">00</div>
-        </div>
-        <div class="buttons">
-            <button class="btn" id="startBtn">INICIAR</button>
-            <button class="btn" id="resetBtn">PAUSAR</button>
-          </div>
-        </div>
+  <script src="./scripts/script.js"></script>
 </body>
+
 </html>
