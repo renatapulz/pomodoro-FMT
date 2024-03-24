@@ -1,0 +1,152 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: "Questrial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container {
+    background-color: #e4ffd1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.timer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 52px;
+    color: #2b6a4d;
+}
+
+.timerIcon {
+    padding-right: 10px;
+}
+
+.botoes {
+    width: 120px;
+    height: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid #BD161C;
+    border-radius: 0.6em;
+    color: #BD161C;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 10px;
+    outline: none !important;
+}
+
+.botoes:hover {
+    color: #fff;
+    opacity: 0.7;
+    background-color: #BD161C;
+    border: 1px solid #BD161C;
+}
+
+.botoes:active {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+.buttons {
+    display: flex;
+}
+
+.fontVerdeEscuro {
+    color: #004733
+}
+
+p b {
+    font-weight: bold;
+}
+
+.fontVermelho {
+    color: #BD161C
+}
+
+.titulo {
+    font-weight: 700;
+    font-size: 48px;
+}
+
+p {
+    font-size: 25px;
+}
+
+.imgPOM {
+    width: 300px;
+    height: auto;
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        justify-content: flex-start;
+        padding-top: 30px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .botoes {
+        margin-bottom: 10px;
+    }
+
+    .timer,
+    .titulo {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+
+.alteracoes-pom-estuda {
+    background-color: #fbf2c1;
+}
+
+.alteracoes-pom-estuda .imgPOM {
+    content: url('../images/POM-ESTUDA.png');
+}
+
+.alteracoes-pom-malha,
+.textos-extras {
+    background-color: #d5f2e3;
+}
+
+.alteracoes-pom-malha .imgPOM {
+    content: url('../images/POM-MALHA.png');
+}
+
+.texto-descricao {
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.textos-extras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.titulo-exercicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
