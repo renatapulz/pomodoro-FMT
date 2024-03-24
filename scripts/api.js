@@ -46,4 +46,10 @@ function mostraExercicio() {
   exercicioAtual++;
 }
 
+function ocultarExercicio() {
+  nomeExercicio.innerText = "";
+  dificuldadeExercicio.innerText = "";
+  descricaoExercicio.innerText = "";
+}
+
 solicitaExercicios();

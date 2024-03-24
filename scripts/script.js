@@ -72,6 +72,7 @@ function alteraItensNaTela() {
     elementoCronometro.innerHTML = "25:00";
     container.classList.add("alteracoes-pom-estuda");
     textoInicial.innerHTML = "Agora é <b>FOCO</b> hein!";
+    ocultarExercicio();
   } else {
     elementoCronometro.innerHTML = "5:00";
     container.classList.add("alteracoes-pom-malha");
