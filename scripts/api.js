@@ -12,7 +12,7 @@ function solicitaExercicios() {
     "https://api.api-ninjas.com/v1/exercises?type=stretching&offset=" + offset, //o offset é usado para a paginação, considerando que a API retorna apenas 10 itens a cada chamada
     {
       method: "GET", //o método GET é um método HTTP usado quando precisamos obter dados de um servidor
-      headers: { "X-Api-Key": "YOUR_API_KEY" }, //a API em questão necessita de uma chave para a autenticação, você obtem a sua fazendo login no site
+      headers: { "X-Api-Key": "Ny7uAQgaYMwnpA01JA2uxQ==CfRdB92tdNcoJyYp" }, //a API em questão necessita de uma chave para a autenticação, você obtem a sua fazendo login no site
     }
   )
     .then((resposta) => {
