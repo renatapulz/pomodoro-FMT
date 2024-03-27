@@ -57,3 +57,14 @@ Nesta etapa de intervalo dos estudos, um exercício de alongamento é exibido na
 ## API Utilizada:
 #### API NINJAS
 Link:   https://api-ninjas.com/ 
+
+## Instruções:
+Para rodar o projeto é necessário logar no site API Ninjas e copiar a chave fornecida: 
+<br/>
+
+![Api ninjas](./assets/images/api-ninjas.png)
+
+Logo após, basta colar a chave no arquivo api.js
+<br/>
+
+![Api js](./assets/images/api-js.png)
