@@ -3,9 +3,8 @@ const elementoCronometro = document.getElementById("cronometro");
 const iniciar = document.getElementById("start-botao");
 const parar = document.getElementById("stop-botao");
 const textoInicial = document.getElementsByClassName("fontVerdeEscuro")[0];
-const textoExtra = document.querySelector(".textos-extras");
 
-let tempoInicialPadrao = 0.05 * 60;
+let tempoInicialPadrao = 25 * 60;
 let tempoInicial = tempoInicialPadrao;
 let tempoDecorrido = 0;
 let intervaloTempo;
@@ -13,7 +12,6 @@ let execucao = false;
 
 textoInicial.innerHTML = "Oi, eu sou o <b>POM!</b> Vamos estudar?";
 elementoCronometro.innerHTML = "25:00";
-textoExtra.style.display = "none";
 
 // Função para iniciar a contagem regressiva
 function iniciarContagemRegressiva() {
@@ -44,20 +42,15 @@ function pararTempo() {
 // Função para atualizar o tempo e chamar a função alteraItensNaTela()
 function atualizarTempo() {
   tempoDecorrido--;
-  if(tempoDecorrido < 0 && textoInicial.innerHTML == "Hora de <b>ALONGAR</b>. Vem comigo!"){
-    alert("Parabéns!!! Tarefa concluída!!!")
-    
-  }
   if (tempoDecorrido < 0) {
     clearInterval(intervaloTempo);
     execucao = false;
     if (tempoInicial === tempoInicialPadrao) {
-      tempoInicial = 0.1 * 60;
+      tempoInicial = 5 * 60;
     } else {
       tempoInicial = tempoInicialPadrao;
     }
     tempoDecorrido = 0;
-
     alteraItensNaTela();
   } else {
     let minutos = Math.floor(tempoDecorrido / 60);
@@ -75,19 +68,15 @@ function atualizarTempo() {
 // Função que permite alteração das imagens, textos, tempo e cor
 function alteraItensNaTela() {
   container.classList.remove("alteracoes-pom-estuda", "alteracoes-pom-malha");
-
   if (tempoInicial === tempoInicialPadrao) {
     elementoCronometro.innerHTML = "25:00";
     container.classList.add("alteracoes-pom-estuda");
     textoInicial.innerHTML = "Agora é <b>FOCO</b> hein!";
-    textoExtra.style.display = "none";
-
     ocultarExercicio();
   } else {
     elementoCronometro.innerHTML = "5:00";
     container.classList.add("alteracoes-pom-malha");
     textoInicial.innerHTML = "Hora de <b>ALONGAR</b>. Vem comigo!";
-    textoExtra.style.display = "flex";
     mostraExercicio();
   }
 }
@@ -96,7 +85,6 @@ function alteraItensNaTela() {
 function iniciarCronometro(tempo) {
   clearInterval(intervaloTempo);
   tempoDecorrido = tempo;
-
   if (intervaloTempo === undefined) {
     //não remover - valida se é a primeira vez pra alterar a classe e chamar a tela do POM estudando
     alteraItensNaTela();
@@ -109,7 +97,7 @@ function iniciarCronometro(tempo) {
   intervaloTempo = setInterval(atualizarTempo, 1000);
 }
 
-
-
 iniciar.addEventListener("click", iniciarContagemRegressiva);
 parar.addEventListener("click", pararTempo);
+concluirAlongamento.addEventListener("click", marcarExercicioComoConcluido);
+
