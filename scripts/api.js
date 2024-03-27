@@ -1,4 +1,4 @@
-const key = "PkAJKetq00nFxyY3F8bGiA==uE3dDLK9z9ANWyDN"; //a API em questão necessita de uma chave para a autenticação, você obtem a sua fazendo login no site
+const key = "YOUR_API_KEY"; //a API em questão necessita de uma chave para a autenticação, você obtem a sua fazendo login no site
 const apiUrl = "https://api.api-ninjas.com/v1/exercises";
 
 async function fetchExercises(offset = 0) {

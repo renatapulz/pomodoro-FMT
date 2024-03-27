@@ -14,6 +14,7 @@ const mostraExercicio = () => {
       if (!exercicioFoiFeito(exercicios[i].name)) {
         exercicioCount++;
         exercicioAtual = exercicios[i];
+        alteraIndex(i);
         nomeExercicio.innerText = exercicioAtual.name;
         dificuldadeExercicio.innerText = exercicioAtual.difficulty;
         descricaoExercicio.innerText = exercicioAtual.instructions;
@@ -64,6 +65,10 @@ const exercicioFoiFeito = (name) => {
 const aumentarOffset = () => {
   let offset = parseInt(getOffset());
   setOffset(offset + 1);
+}
+
+const alteraIndex = (i) => {
+  setIndex(i);
 }
 
 const ocultarExercicio = () => {

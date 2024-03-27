@@ -4,7 +4,7 @@ const iniciar = document.getElementById("start-botao");
 const parar = document.getElementById("stop-botao");
 const textoInicial = document.getElementsByClassName("fontVerdeEscuro")[0];
 
-let tempoInicialPadrao = 0.05 * 60;
+let tempoInicialPadrao = 25 * 60;
 let tempoInicial = tempoInicialPadrao;
 let tempoDecorrido = 0;
 let intervaloTempo;
@@ -46,7 +46,7 @@ function atualizarTempo() {
     clearInterval(intervaloTempo);
     execucao = false;
     if (tempoInicial === tempoInicialPadrao) {
-      tempoInicial = 0.1 * 60;
+      tempoInicial = 5 * 60;
     } else {
       tempoInicial = tempoInicialPadrao;
     }
