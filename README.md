@@ -32,7 +32,7 @@ Vanessa Hasckel: https://github.com/vhasckel
 <br/>
 
 ![Pomodoro pausar](./assets/images/POM-pausar.png)
-**Botão PAUSAR** - Tem a função de interrompar/pausar o cronômetro.
+**Botão PAUSAR** - Tem a função de interromper/pausar o cronômetro.
 <br/>
 <br/>
 
