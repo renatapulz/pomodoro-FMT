@@ -13,6 +13,11 @@ const getExercicios = () => {
 	return JSON.parse(localStorage.getItem('exercicios'));
 }
 
+// Retorna a lista de Exercicios já listados.
+const getExerciciosListados = () => {
+	return JSON.parse(localStorage.getItem('exerciciosListados'));
+}
+
 // Retorna o index do último exercício listado.
 const getIndex = () => {
 	return JSON.parse(localStorage.getItem('index'));
@@ -26,6 +31,18 @@ const setOffset = (value) => {
 // Salva os exercícios vindos da API no localStorage.
 const setExercicios = (value) => {
 	localStorage.setItem('exercicios', JSON.stringify(value));
+}
+
+// Salva o exercício como já listado no localStorage.
+const setExerciciosListados = (value) => {
+	if (value == null) {
+		localStorage.setItem('exerciciosListados', JSON.stringify([]));
+	}
+	else {
+		let exercicios = getExerciciosListados();
+		exercicios.push(value);
+		localStorage.setItem('exerciciosListados', JSON.stringify(exercicios));
+	}
 }
 
 // Salva um exercício como concluído no localStorage.
@@ -54,6 +71,9 @@ if (getIndex() == null) {
 }
 if (getExerciciosFeitos() == null) {
 	setExerciciosFeitos(null);
+}
+if (getExerciciosListados() == null) {
+	setExerciciosListados(null);
 }
 if (getExercicios() == null) {
 	setExercicios([]);
