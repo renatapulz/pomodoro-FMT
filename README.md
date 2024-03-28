@@ -8,7 +8,7 @@ Projeto realizado como exercício da semana [09] da trilha **Futuro Dev** (turma
 
 ### Objetivo:
 
-Desenvolver um **Pomodoro** voltado para pessoas que trabalham sentadas, onde ao final de cada período de 25 minutos o programa sorteia um exercício de alongamento proveniente de uma API gratuita.
+Desenvolver um **Pomodoro** voltado para pessoas que trabalham sentadas, onde ao final de cada período de 25 minutos o programa sorteia um exercício de alongamento proveniente de uma API.
 O intuito é que o usuário realize o alongamento sugerido nos 5 minutos de 
 descanso do **Pomodoro**.
 
@@ -44,13 +44,13 @@ Vanessa Hasckel: https://github.com/vhasckel
 ## Hora de alongar
 
 ![Pomodoro exibir](./assets/images/POM-exibir.png)
-Nesta etapa de intervalo dos estudos, um exercício de alongamento é exibido na tela para que o usuário realize. Os botões INICIAR, PAUSAR e RETOMAR continuam com as mesmas ações das telas anteriores. <br>
---- *Não era tarefa da atividade traduzir o texto enviado pela API*.
+Nesta etapa de intervalo dos estudos, um exercício de alongamento é exibido na tela para que o usuário o realize. Os botões INICIAR, PAUSAR e RETOMAR continuam com as mesmas ações das telas anteriores. <br>
+--- *Não era requisito do exercício traduzir o texto enviado pela API*.
 <br/>
 <br/>
 
 ![Pomodoro concluir](./assets/images/POM-concluir.png)
-**Botão MARCAR COMO CONCLUÍDO** - Tem a função de salvar o exercício como concluído e no próximo intervalo outra atividade será exibida.
+**Botão MARCAR COMO CONCLUÍDO** - Tem a função de salvar o exercício como *concluído* e no próximo intervalo outra atividade será exibida.
 <br/>
 <br/>
 
