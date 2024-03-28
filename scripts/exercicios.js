@@ -11,13 +11,15 @@ const mostraExercicio = () => {
   if (exercicios && exercicios.length) {
     const ultimoExercicio = exercicioAtual;
     for (let i = 0; i < exercicios.length; i++) {
-      if (!exercicioFoiFeito(exercicios[i].name)) {
+      if (!exercicioJaListado(exercicios[i].name)) {
         exercicioCount++;
         exercicioAtual = exercicios[i];
         alteraIndex(i);
+        exercicioJaListado(exercicioJaListado(exercicios[i].name));
         nomeExercicio.innerText = exercicioAtual.name;
         dificuldadeExercicio.innerText = exercicioAtual.difficulty;
         descricaoExercicio.innerText = exercicioAtual.instructions;
+        salvaExercicioListado();
         break;
       }
     }
@@ -44,6 +46,20 @@ const carregarExercicios = () => {
   }
   else {
     return exercicios;
+  }
+}
+
+const exercicioJaListado = (name) => {
+  const exerciciosListados = getExerciciosListados();
+  if (exerciciosListados.length === 0) {
+    return false;
+  } else {
+    for (let i = 0; i < exerciciosListados.length; i++) {
+      if (exerciciosListados[i] == name) {
+        return true;
+      }
+    }
+    return false;
   }
 }
 
@@ -81,6 +97,14 @@ const marcarExercicioComoConcluido = () => {
   if (exercicioAtual != null && exercicioAtual.name) {
     if (!exercicioFoiFeito(exercicioAtual.name)) {
       setExerciciosFeitos(exercicioAtual.name);
+    }
+  }
+}
+
+const salvaExercicioListado = () => {
+  if (exercicioAtual != null && exercicioAtual.name) {
+    if (!exercicioJaListado(exercicioAtual.name)) {
+      setExerciciosListados(exercicioAtual.name);
     }
   }
 }
